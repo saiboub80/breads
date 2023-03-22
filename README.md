@@ -1,6 +1,6 @@
-Project breads!
+<h1>Project breads!<h1>
 As a baker I need to know different type of breads so I can make for my different customers.
-<h1>TecH<h1>
+<h2>Tech<h2>
 node.js
 react
 express
