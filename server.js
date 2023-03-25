@@ -29,7 +29,7 @@ app.use(express.static('public'))
 
 // 404 Page
 app.get('*', (req, res) => {
-  res.send('404')
+  res.render('404')
 })
 
 
