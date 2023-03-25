@@ -6,28 +6,24 @@ require('dotenv').config()
 const PORT = process.env.PORT
 const app = express()
 
+  // MIDDLEWARE
+  app.use(express.urlencoded({extended: true}))
+  app.set('views', __dirname + '/views')
+  app.set('view engine', 'jsx')
+  app.engine('jsx', require('express-react-views').createEngine())
+  app.use(express.static('public'))
+
 // ROUTES
 app.get('/', (req, res) => {
   res.send('Welcome to an Awesome App about Breads!')
 })
-
-// ROUTES
-app.get('/', (req, res) => {
-    res.send('Welcome to an Awesome App about Breads')
-  })
   
   // Breads
-  const breadsController = require('./controllers/breads_controller.js')
-  app.use('/breads', breadsController)
+const breadsController = require('./controllers/breads_controller.js')
+app.use('/breads', breadsController)
 
-  // MIDDLEWARE
-app.set('views', __dirname + '/views')
-app.set('view engine', 'jsx')
-app.engine('jsx', require('express-react-views').createEngine())
-// MIDDLEWARE
-app.use(express.static('public'))
-// MIDDLEWARE
-app.use(express.urlencoded({extended: true}))
+
+
 
 
 // 404 Page

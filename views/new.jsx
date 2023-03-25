@@ -16,9 +16,11 @@ function New () {
           />
           <label htmlFor="image">Image</label>
           <input
-            type="text"
-            name="image"
-            id="image"/>
+            type='url'
+            name='image'
+            id='image'
+            pattern='https?://.+' title='Include
+            http://'/>
           <label htmlFor="hasGluten">Has Gluten?</label>
           <input
             type="checkbox"
@@ -29,8 +31,8 @@ function New () {
           <br />
           <input type="submit"/>
           <div className="backButton">
-  <a href="/breads"><button>Go back to the index</button></a>
-</div>
+            <a href="/breads"><button>Go back to the index</button></a>
+          </div>
 
         </form>
       </Default>
